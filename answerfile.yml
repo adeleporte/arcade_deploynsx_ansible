@@ -11,23 +11,23 @@ esxi_infrastructure_fqdn: ''
 esxi_mgmt_01_fqdn: ''
 esxi_compute_01_fqdn: ''
 esxi_compute_02_fqdn: ''
-vcenter_username: ''
-vcenter_password: ''
+vcenter_username: lookup('env', 'ANSIBLE_VAR_vcenter_username')
+vcenter_password: lookup('env', 'ANSIBLE_VAR_vcenter_password')
 vcenter_virtual_machine_name: ''
 vcenter_hostname: lookup('env', 'ANSIBLE_VAR_vcenter_hostname')
 vcenter_net_ip_address: ''
 vcenter_net_prefix: ''
 vcenter_net_gateway: ''
-vcenter_dns_servers: ''
-domain: ''
+vcenter_dns_servers: lookup('env', 'ANSIBLE_VAR_vcenter_dns_servers')
+domain: lookup('env', 'ANSIBLE_VAR_domain')
 searchpath: "nsxt_virtual_machine_name"
 vcsa_size: 'tiny'
 vcsa_ova_file: '/'
-datastore: ''
+datastore: lookup('env', 'ANSIBLE_VAR_datastore')
 esxi_network: 'VM Network'
 datacenter_name: ''
 vds_name: ''
-vcenter_cluster: ''
+vcenter_cluster: lookup('env', 'ANSIBLE_VAR_vcenter_cluster')
 cluster_name_edge: ''
 cluster_name_compute: ''
 host_folder_name_edge: ''
@@ -43,15 +43,15 @@ nsxt_virtual_machine_name: "SRV-NSXT-MANAGER-01"
 nsxt_hostname: "srv-nsxt-manager-01"
 nsxt_ova_file: "" 
 nsxt_ova_size: "small"
-nsxt_port_group: ""
+nsxt_port_group: lookup('env', 'ANSIBLE_VAR_vcenter_nsxt_port_group')
 nsxt_audit_user: "audit" 
 nsxt_admin_user: "admin"
-nsxt_password: ""
-nsxt_ip_address: ""
-nsxt_netmask: ""
-nsxt_gateway: ""
+nsxt_password: lookup('env', 'ANSIBLE_VAR_nsxt_password')
+nsxt_ip_address: lookup('env', 'ANSIBLE_VAR_nsxt_ip_address')
+nsxt_netmask: lookup('env', 'ANSIBLE_VAR_nsxt_netmask')
+nsxt_gateway: lookup('env', 'ANSIBLE_VAR_nsxt_gateway')
 nsxt_role: "NSX Manager"
-nsxt_datacenter: ""
+nsxt_datacenter: lookup('env', 'ANSIBLE_VAR_nsxt_datacenter')
 nsxt_vm_folder: ""
 nsxt_compute_manager_display_name: ""
 nsxt_compute_manager_origin_type: "vCenter"
