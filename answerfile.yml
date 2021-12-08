@@ -14,7 +14,7 @@ esxi_compute_02_fqdn: ''
 vcenter_username: ''
 vcenter_password: ''
 vcenter_virtual_machine_name: ''
-vcenter_hostname: ''
+vcenter_hostname: lookup('env', 'ANSIBLE_VAR_vcenter_hostname')
 vcenter_net_ip_address: ''
 vcenter_net_prefix: ''
 vcenter_net_gateway: ''
