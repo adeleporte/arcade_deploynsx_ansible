@@ -7,7 +7,7 @@
   tasks:
     - name: Download foo.conf
       get_url:
-        url: "{{ nsxt_virtual_machine_name }}"
+        url: "{{ nsxt_ova_file }}"
         dest: nsx.ova
     - vmware_deploy_ovf:
         hostname: "{{ vcenter_hostname }}.{{ domain }}"
