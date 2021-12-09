@@ -8,13 +8,13 @@
     - name: Download foo.conf
       get_url:
         url: "{{ nsxt_ova_file }}"
-        dest: nsx.ova
+        dest: /workspace/nsx.ova
     - vmware_deploy_ovf:
         hostname: "{{ vcenter_hostname }}.{{ domain }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         name: "{{ nsxt_virtual_machine_name }}" # Virtual Machine name in ESXI, not FQDN
-        ovf: "nsx.ova"
+        ovf: /workspace/nsx.ova
         wait_for_ip_address: true
         validate_certs: no
         inject_ovf_env: true
