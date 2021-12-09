@@ -41,7 +41,7 @@ vm_folder_name_tenant_02: 'COMPUTE-TENANT-02'
 ## NSXT VARIABLES - DATA CENTER INFRASTRUCTURE ##
 nsxt_virtual_machine_name: "SRV-NSXT-MANAGER-01"
 nsxt_hostname: "srv-nsxt-manager-01"
-nsxt_ova_file: "" 
+nsxt_ova_file: "{{ lookup('env', 'ANSIBLE_VAR_nsxt_ova_file') }}"
 nsxt_ova_size: "small"
 nsxt_port_group: "{{ lookup('env', 'ANSIBLE_VAR_vcenter_nsxt_port_group') }}"
 nsxt_audit_user: "audit" 
