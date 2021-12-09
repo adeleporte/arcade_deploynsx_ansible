@@ -5,12 +5,16 @@
   vars_files: answerfile.yml
 
   tasks:
+    - name: Download foo.conf
+      get_url:
+        url: "{{ nsxt_virtual_machine_name }}"
+        dest: nsx.ova
     - vmware_deploy_ovf:
         hostname: "{{ vcenter_hostname }}.{{ domain }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         name: "{{ nsxt_virtual_machine_name }}" # Virtual Machine name in ESXI, not FQDN
-        ovf: "{{ nsxt_ova_file }}"
+        ovf: "nsx.ova"
         wait_for_ip_address: true
         validate_certs: no
         inject_ovf_env: true
