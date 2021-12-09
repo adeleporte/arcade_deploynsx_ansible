@@ -9,6 +9,7 @@
       get_url:
         url: "{{ nsxt_ova_file }}"
         dest: /workspace/nsx.ova
+        tmp_dest: /workspace
     - vmware_deploy_ovf:
         hostname: "{{ vcenter_hostname }}.{{ domain }}"
         username: "{{ vcenter_username }}"
